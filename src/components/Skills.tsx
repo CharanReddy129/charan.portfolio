@@ -80,12 +80,12 @@ const Skills = () => {
             Technical <span className="gradient-text">Skills</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
             DevOps tools and technologies I work with to build robust, scalable infrastructure
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mb-16">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6">
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
@@ -115,35 +115,6 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Programming Languages with Progress Bars */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-semibold text-center mb-8 gradient-text-secondary">
-            Programming & Scripting Languages
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {programmingLanguages.map((lang, index) => (
-              <div 
-                key={index} 
-                className="animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-medium text-foreground">{lang.name}</span>
-                  <span className="text-sm text-muted-foreground">{lang.level}%</span>
-                </div>
-                <div className="w-full bg-muted rounded-full h-2">
-                  <div 
-                    className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full transition-all duration-1000 ease-out"
-                    style={{ 
-                      width: `${lang.level}%`,
-                      animation: `width-grow 1.5s ease-out ${index * 0.2}s both`
-                    }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

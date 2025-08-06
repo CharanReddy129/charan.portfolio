@@ -88,9 +88,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Contact Information */}
-          <div className="space-y-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-8">
+            {/* Contact Information */}
             <Card className="border-border bg-card animate-slide-in">
               <CardHeader>
                 <CardTitle className="gradient-text-secondary">Contact Information</CardTitle>
@@ -106,7 +106,7 @@ const Contact = () => {
                       <info.icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-sm">{info.label}</p>
+                      <p className="font-medium text-sm text-foreground">{info.label}</p>
                       <p className="text-muted-foreground text-sm">{info.value}</p>
                     </div>
                   </a>
@@ -134,69 +134,6 @@ const Contact = () => {
                     </a>
                   ))}
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="border-border bg-card animate-fade-in">
-              <CardHeader>
-                <CardTitle className="gradient-text-secondary">Send a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="Your full name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="border-border focus:border-primary"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email Address</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="your.email@example.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="border-border focus:border-primary"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell me about your project, opportunity, or just say hello!"
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      className="border-border focus:border-primary resize-none"
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full glow-primary"
-                    size="lg"
-                  >
-                    <Send className="h-5 w-5 mr-2" />
-                    Send Message
-                  </Button>
-                </form>
               </CardContent>
             </Card>
           </div>
