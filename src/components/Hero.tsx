@@ -21,6 +21,9 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
+          <p className="text-lg md:text-xl text-muted-foreground mb-4">
+            Hi, I'm <span className="text-primary font-semibold">Alex Johnson</span>
+          </p>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="gradient-text">DevOps</span>
             <br />

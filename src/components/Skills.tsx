@@ -96,7 +96,7 @@ const Skills = () => {
                 <div className="mx-auto p-3 bg-muted/50 rounded-lg mb-3 w-fit">
                   <category.icon className={`h-8 w-8 ${category.color}`} />
                 </div>
-                <CardTitle className="text-lg">{category.title}</CardTitle>
+                <CardTitle className="text-lg text-foreground">{category.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -128,7 +128,7 @@ const Skills = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex justify-between items-center mb-2">
-                  <span className="font-medium">{lang.name}</span>
+                  <span className="font-medium text-foreground">{lang.name}</span>
                   <span className="text-sm text-muted-foreground">{lang.level}%</span>
                 </div>
                 <div className="w-full bg-muted rounded-full h-2">

@@ -32,12 +32,6 @@ const Education = () => {
     }
   ];
 
-  const certifications = [
-    "AWS Cloud Practitioner (In Progress)",
-    "Docker Fundamentals",
-    "Kubernetes Basics",
-    "Git & GitHub Essentials"
-  ];
 
   return (
     <section id="education" className="py-20">
@@ -52,10 +46,9 @@ const Education = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Academic Education */}
-          <div className="lg:col-span-2 space-y-6">
-            <h3 className="text-2xl font-semibold gradient-text-secondary mb-6">Academic Qualifications</h3>
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl font-semibold gradient-text-secondary mb-6">Academic Qualifications</h3>
+          <div className="space-y-6">
             {education.map((edu, index) => (
               <Card 
                 key={index} 
@@ -97,44 +90,6 @@ const Education = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-
-          {/* Certifications */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold gradient-text-secondary mb-6">Certifications</h3>
-            <Card className="card-hover border-border bg-card animate-fade-in">
-              <CardHeader>
-                <CardTitle className="text-lg">Professional Certifications</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {certifications.map((cert, index) => (
-                    <div 
-                      key={index} 
-                      className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors"
-                    >
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span className="text-sm">{cert}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Learning Goals */}
-            <Card className="card-hover border-border bg-card animate-fade-in">
-              <CardHeader>
-                <CardTitle className="text-lg">Current Learning Goals</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>• AWS Solutions Architect</p>
-                  <p>• Terraform Certification</p>
-                  <p>• Kubernetes Administrator</p>
-                  <p>• Monitoring & Observability</p>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
