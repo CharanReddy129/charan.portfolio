@@ -109,13 +109,13 @@ const Projects = () => {
                   <h4 className="font-semibold mb-3 text-sm">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, idx) => (
-                      <Badge 
-                        key={idx} 
-                        variant="secondary" 
-                        className="skill-badge text-xs"
-                      >
-                        {tech}
-                      </Badge>
+                    <Badge 
+                      key={idx} 
+                      variant="secondary" 
+                      className="skill-badge text-xs text-cyan-400"
+                    >
+                      {tech}
+                    </Badge>
                     ))}
                   </div>
                 </div>

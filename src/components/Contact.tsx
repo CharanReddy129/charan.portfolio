@@ -36,19 +36,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "contact@devops-portfolio.dev",
-      href: "mailto:contact@devops-portfolio.dev"
+      value: "gajulapallicharan@gmail.com",
+      href: "mailto:gajulapallicharan@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+91 9347186653",
+      href: "tel:+919347186653"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "City, State, Country",
+      value: "Bengaluru, Karnataka",
       href: "#"
     }
   ];
@@ -57,19 +57,19 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/charanreddy12/",
       color: "hover:text-blue-500"
     },
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/CharanReddy129",
       color: "hover:text-primary"
     },
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:contact@devops-portfolio.dev",
+      href: "mailto:gajulapallicharan@gmail.com",
       color: "hover:text-secondary"
     }
   ];

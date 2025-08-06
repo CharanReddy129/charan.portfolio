@@ -4,9 +4,10 @@ import {
   GitBranch, 
   Monitor, 
   Server, 
-  Database,
+  Terminal,
   Shield,
-  Code
+  Code,
+  Workflow
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -16,61 +17,53 @@ const Skills = () => {
     {
       icon: Cloud,
       title: "Cloud Platforms",
-      skills: ["AWS", "Azure", "Google Cloud", "DigitalOcean"],
+      skills: ["AWS"],
       color: "text-blue-500"
     },
     {
       icon: Container,
       title: "Containerization",
-      skills: ["Docker", "Kubernetes", "Podman", "Docker Compose"],
+      skills: ["Docker", "Kubernetes", "Docker Compose"],
       color: "text-primary"
     },
     {
       icon: GitBranch,
-      title: "CI/CD & Version Control",
-      skills: ["Jenkins", "GitHub Actions", "GitLab CI", "Git", "ArgoCD"],
+      title: "Version Control",
+      skills: ["Git", "GitHub"],
       color: "text-secondary"
     },
     {
       icon: Code,
       title: "Infrastructure as Code",
-      skills: ["Terraform", "Ansible", "CloudFormation", "Helm"],
+      skills: ["Terraform", "Ansible", "Helm"],
       color: "text-green-500"
     },
     {
-      icon: Monitor,
-      title: "Monitoring & Logging",
-      skills: ["Prometheus", "Grafana", "ELK Stack", "New Relic"],
-      color: "text-purple-500"
-    },
-    {
-      icon: Server,
+      icon: Terminal,
       title: "Operating Systems",
-      skills: ["Linux", "Ubuntu", "CentOS", "Windows Server"],
+      skills: ["Linux", "Ubuntu", "Debian"],
       color: "text-orange-500"
     },
     {
-      icon: Database,
-      title: "Databases",
-      skills: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
+      icon: Workflow,
+      title: "CI/CD",
+      skills: ["Jenkins", "GitHub Actions", "AgroCD"],
       color: "text-indigo-500"
     },
     {
-      icon: Shield,
-      title: "Security & Networking",
-      skills: ["SSL/TLS", "VPN", "Firewalls", "IAM", "OWASP"],
+      icon: Server,
+      title: "Web Server",
+      skills: ["Nginx"],
+      color: "text-purple-500"
+    },
+    {
+      icon: Monitor,
+      title: "Monitoring",
+      skills: ["Prometheus", "Grafana"],
       color: "text-red-500"
     }
   ];
 
-  const programmingLanguages = [
-    { name: "Python", level: 85 },
-    { name: "Bash/Shell", level: 80 },
-    { name: "YAML", level: 90 },
-    { name: "JavaScript", level: 75 },
-    { name: "Go", level: 60 },
-    { name: "JSON", level: 95 }
-  ];
 
   return (
     <section id="skills" className="py-20 bg-card/30">
@@ -81,7 +74,7 @@ const Skills = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            DevOps tools and technologies I work with to build robust, scalable infrastructure
+            DevOps tools and technologies I work with
           </p>
         </div>
 
@@ -104,7 +97,7 @@ const Skills = () => {
                     <Badge 
                       key={idx} 
                       variant="secondary" 
-                      className="skill-badge text-xs"
+                      className="skill-badge text-xs text-cyan-400"
                     >
                       {skill}
                     </Badge>

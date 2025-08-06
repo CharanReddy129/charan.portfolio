@@ -22,12 +22,11 @@ const Hero = () => {
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <p className="text-lg md:text-xl text-muted-foreground mb-4">
-            Hi, I'm <span className="text-primary font-semibold">Alex Johnson</span>
+            Hi, I'm
           </p>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="gradient-text">DevOps</span>
-            <br />
-            <span className="gradient-text-secondary">Engineer</span>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <span className="gradient-text">Charan </span>
+            <span className="gradient-text-secondary">Reddy</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -46,17 +45,20 @@ const Hero = () => {
             </Button>
             
             <Button 
+              asChild
               variant="outline" 
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
+              <a href="/resume.pdf" download>
               Download Resume
               <Download className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </div>
           
           {/* Floating tech icons */}
-          <div className="flex justify-center space-x-8 text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-4 md:space-x-8 text-muted-foreground">
             <div className="animate-float" style={{ animationDelay: '0s' }}>
               <div className="skill-badge px-4 py-2 rounded-full text-sm">Docker</div>
             </div>

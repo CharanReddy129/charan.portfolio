@@ -5,31 +5,20 @@ import { Badge } from '@/components/ui/badge';
 const Education = () => {
   const education = [
     {
-      degree: "Bachelor of Technology in Computer Science",
-      institution: "Tech University",
-      location: "City, State",
+      degree: "Bachelor of Technology in Computer Science and Engineering",
+      institution: "YSR Engineering College",
+      university: "Yogi Vemana University",
+      location: "Proddatur, Andhra Pradesh",
       period: "2020 - 2024",
-      grade: "CGPA: 8.5/10",
-      highlights: [
-        "Data Structures & Algorithms",
-        "Operating Systems",
-        "Computer Networks",
-        "Database Management",
-        "Software Engineering"
-      ]
+      // grade: "CGPA: 8.5/10"
     },
-    {
-      degree: "Senior Secondary (12th)",
-      institution: "Excellence High School",
-      location: "City, State", 
-      period: "2018 - 2020",
-      grade: "92%",
-      highlights: [
-        "Mathematics",
-        "Physics", 
-        "Computer Science"
-      ]
-    }
+    // {
+    //   degree: "Senior Secondary (12th)",
+    //   institution: "Excellence High School",
+    //   location: "City, State", 
+    //   period: "2018 - 2020",
+    //   // grade: "92%"
+    // }
   ];
 
 
@@ -40,10 +29,6 @@ const Education = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="gradient-text">Education</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My academic foundation and continuous learning journey in technology
-          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -64,6 +49,7 @@ const Education = () => {
                       <CardTitle className="text-xl mb-2">{edu.degree}</CardTitle>
                       <div className="space-y-1 text-muted-foreground">
                         <p className="font-medium">{edu.institution}</p>
+                        <p className="flex">{edu.university}</p>
                         <div className="flex items-center gap-4 text-sm">
                           <span className="flex items-center gap-1">
                             <MapPin className="h-4 w-4" />
@@ -79,15 +65,8 @@ const Education = () => {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {edu.highlights.map((subject, idx) => (
-                      <Badge key={idx} variant="secondary" className="skill-badge">
-                        {subject}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
+                  {/* Highlights removed as requested */}
+                  <CardContent />
               </Card>
             ))}
           </div>
