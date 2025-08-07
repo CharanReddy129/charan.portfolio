@@ -87,4 +87,61 @@ If you need to add environment variables, create a `.env` file in the root and r
 - For styling, use Tailwind classes or update `src/index.css`.
 
 ---
+
+## Hosting on GitHub Pages
+
+You can deploy your Vite/React portfolio to GitHub Pages with these steps:
+
+1. **Build the project for production:**
+   ```bash
+   npm run build
+   ```
+   This creates a `dist/` folder with static files.
+
+2. **Install gh-pages (optional, for easy deployment):**
+   ```bash
+   npm install --save-dev gh-pages
+   ```
+
+3. **Update `vite.config.ts` for GitHub Pages:**
+   Add the `base` property to match your repo name:
+   ```js
+   export default defineConfig({
+     base: '/<REPO_NAME>/',
+     // ...other config
+   });
+   ```
+   Replace `<REPO_NAME>` with your GitHub repository name.
+
+4. **Add deployment scripts to `package.json`:**
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d dist"
+   }
+   ```
+
+5. **Push your code to GitHub:**
+   - Create a new repository on GitHub.
+   - Push your local code to the remote repository.
+
+6. **Deploy to GitHub Pages:**
+   ```bash
+   npm run deploy
+   ```
+   This will publish your `dist/` folder to the `gh-pages` branch.
+
+7. **Enable GitHub Pages in repo settings:**
+   - Go to your repository on GitHub.
+   - Settings → Pages → Source: select `gh-pages` branch and `/ (root)`.
+
+8. **Access your site:**
+   - Your site will be available at `https://<username>.github.io/<REPO_NAME>/`
+
+**Tips:**
+- Make sure all asset paths are relative or use the correct base.
+- Place your favicon and resume in the `public/` folder.
+- If you use custom domains, configure them in GitHub Pages settings.
+
+---
 For questions or issues, open an issue in this repository or contact the maintainer.
