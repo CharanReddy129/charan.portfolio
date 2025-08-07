@@ -6,48 +6,46 @@ import { Button } from '@/components/ui/button';
 const Projects = () => {
   const projects = [
     {
-      title: "Microservices Deployment Pipeline",
-      description: "Built a complete CI/CD pipeline using Jenkins, Docker, and Kubernetes to automate deployment of microservices architecture. Integrated automated testing, security scanning, and deployment rollback mechanisms.",
-      technologies: ["Jenkins", "Docker", "Kubernetes", "Git", "Prometheus", "Grafana"],
+      title: "Automated two-tier application deployment pipeline",
+      description: "Automated the end-to-end deployment of a two-tier application consisting of a Flask backend and MySQL database using a Jenkins CI/CD pipeline. The solution includes containerization, persistent volume provisioning, Kubernetes deployment, and Git-based automation triggers",
+      technologies: ["Jenkins", "Docker", "Kubernetes", "Git", "GitHub"],
       features: [
-        "Automated build and test pipeline",
-        "Container security scanning",
-        "Blue-green deployment strategy",
-        "Monitoring and alerting setup",
-        "Infrastructure as Code with Helm"
+        "Automated build and deployment pipeline using Jenkins",
+        "Dockerized Flask backend application",
+        "Persistent Volume setup for MySQL data storage",
+        "Kubernetes manifests for deployment and service exposure ",
+        "Application accessible via Kubernetes NodePort service",
       ],
-      github: "#",
+      github: "https://github.com/CharanReddy129/two-tier-web-application.git",
       demo: "#",
       status: "Completed"
     },
     {
-      title: "AWS Infrastructure Automation",
-      description: "Designed and implemented scalable AWS infrastructure using Terraform and Ansible. Created auto-scaling web application environment with load balancing, RDS database, and CloudWatch monitoring.",
-      technologies: ["AWS", "Terraform", "Ansible", "CloudWatch", "ELB", "RDS"],
+      title: "Cloud Infrastructure Automation with GitHub Actions",
+      description: "Automated cloud infrastructure provisioning using GitHub Actions as the CI/CD tool. Used Terraform as an Infrastructure as Code tool to provision and manage AWS resources. Created a fully functional Amazon EKS cluster within a custom VPC, enabling scalable and secure deployment environments",
+      technologies: ["AWS", "Terraform", "GitHub Actions", "EKS", "VPC", "Git", "GitHub"],
       features: [
-        "Infrastructure as Code implementation",
-        "Auto-scaling configuration",
-        "Database backup automation",
-        "Cost optimization strategies",
-        "Security best practices"
+        "GitHub Actions workflow for automated infrastructure provisioning",
+        "Infrastructure as Code using Terraform",
+        "Provisioned Amazon EKS cluster inside a custom VPC",
+        "Version-controlled infrastructure with Git",
+        "Automated and repeatable cloud environment setup",
       ],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/CharanReddy129/EKS_Cluster_with_Actions.git",
       status: "Completed"
     },
     {
-      title: "Container Orchestration Lab",
-      description: "Created a local development environment using Docker Compose and Kubernetes (Kind) for testing containerized applications. Includes service mesh setup with Istio and observability stack.",
-      technologies: ["Docker", "Kubernetes", "Istio", "Jaeger", "Kind", "Helm"],
+      title: "End-to-End CI/CD Pipeline for Java Application on AWS EKS",
+      description: "Automated the end-to-end CI/CD pipeline to deploy a Java-based application into an AWS EKS cluster using GitHub Actions. The application was built using Maven, performed integrated security checks using SonarQube and Trivy. The application was then containerized with Docker, the image was pushed to AWS ECR, and the deployment to EKS was managed declaratively using ArgoCD.",
+      technologies: ["Docker", "Kubernetes", "AWS EKS", "AWS ECR", "Git", "GitHub", "ArgoCD", "GitHub Actions",],
       features: [
-        "Multi-container application setup",
-        "Service mesh implementation",
-        "Distributed tracing",
-        "Local Kubernetes cluster",
-        "Development workflow automation"
+        "GitHub Actions pipeline for build, security scanning, and deployment",
+        "Java application build and test automation using Maven",
+        "Static code analysis with SonarQube and image vulnerability scanning with Trivy",
+        "Dockerized application and pushed image to Amazon ECR",
+        "Declarative application deployment to EKS using ArgoCD"
       ],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/CharanReddy129/Java_maven_Project.git",
       status: "Completed"
     }
   ];
@@ -109,11 +107,7 @@ const Projects = () => {
                   <h4 className="font-semibold mb-3 text-sm">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, idx) => (
-                    <Badge 
-                      key={idx} 
-                      variant="secondary" 
-                      className="skill-badge text-xs text-cyan-400"
-                    >
+                    <Badge key={idx} variant="secondary" className="skill-badge text-xs text-cyan-400">
                       {tech}
                     </Badge>
                     ))}
@@ -121,14 +115,12 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex gap-3 mt-auto">
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
+                  <Button asChild variant="outline" size="sm" className="flex-1" disabled={project.github === "#"}>
+                    <a href={project.github !== "#" ? project.github : undefined} target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4 mr-2" />
+                      Code
+                    </a>
                   </Button>
-                  {/* <Button variant="outline" size="sm" className="flex-1">
-                    <Play className="h-4 w-4 mr-2" />
-                    Demo
-                  </Button> */}
                 </div>
               </CardContent>
             </Card>
