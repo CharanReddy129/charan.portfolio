@@ -13,15 +13,6 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === 'development' && componentTagger(),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'dist/index.html',
-          dest: '', // output as dist/404.html
-          rename: '404.html',
-        },
-      ],
-    })
   ].filter(Boolean),
   resolve: {
     alias: {
