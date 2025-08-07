@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
 
-## Project info
+# DevOps Portfolio Webpage – Build & Deployment Guide
 
-**URL**: https://lovable.dev/projects/6082f75b-36a7-4fa3-b46a-fabb3ab90324
+## Prerequisites
 
-## How can I edit this code?
+- Node.js (v18+ recommended)
+- npm or bun (for package management)
+- Docker (optional, for containerized deployment)
 
-There are several ways of editing your application.
+## Local Development
 
-**Use Lovable**
+1. **Clone the repository:**
+   ```bash
+   git clone <YOUR_GIT_URL>
+   cd devops-fresh-canvas
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   bun install
+   ```
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   bun run dev
+   ```
+   The app will be available at [http://localhost:8080](http://localhost:8080).
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6082f75b-36a7-4fa3-b46a-fabb3ab90324) and start prompting.
+## Production Build
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Build the optimized static files:**
+   ```bash
+   npm run build
+   # or
+   bun run build
+   ```
+   The output will be in the `dist/` folder.
 
-**Use your preferred IDE**
+2. **Preview the production build locally:**
+   ```bash
+   npm run preview
+   # or
+   bun run preview
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Deployment Options
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 1. Static Hosting (Vercel, Netlify, GitHub Pages, etc.)
+- Upload the contents of the `dist/` folder to your preferred static hosting provider.
+- Ensure your `public/` assets (e.g., resume.pdf) are included.
 
-Follow these steps:
+### 2. Docker Deployment
+Build and run the app in a container:
+```dockerfile
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY . .
+RUN npm install && npm run build
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY public /usr/share/nginx/html
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
+```
+Build and run:
+```bash
+docker build -t devops-portfolio .
+docker run -p 8080:8080 devops-portfolio
 ```
 
-**Edit a file directly in GitHub**
+### 3. Lovable Platform
+- Open [Lovable](https://lovable.dev/projects/6082f75b-36a7-4fa3-b46a-fabb3ab90324)
+- Click Share → Publish to deploy instantly.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 4. Custom Domain
+- Configure via your hosting provider or Lovable project settings.
 
-**Use GitHub Codespaces**
+## Environment Variables
+If you need to add environment variables, create a `.env` file in the root and reference them in your code as needed.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Additional Notes
+- Static assets (e.g., resume.pdf) should be placed in the `public/` folder.
+- For UI changes, edit components in `src/components/`.
+- For styling, use Tailwind classes or update `src/index.css`.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6082f75b-36a7-4fa3-b46a-fabb3ab90324) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+For questions or issues, open an issue in this repository or contact the maintainer.

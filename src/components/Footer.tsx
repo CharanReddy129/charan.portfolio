@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           <div>
-            <h3 className="text-xl font-bold gradient-text mb-4">DevOps Portfolio</h3>
+            <h3 className="text-xl font-bold gradient-text mb-4">Portfolio</h3>
             <p className="text-muted-foreground text-sm max-w-xs">
               Passionate about automation, cloud infrastructure, and building scalable systems.
             </p>
@@ -33,20 +33,20 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Connect</h4>
             <div className="space-y-2 text-sm">
-              <a href="mailto:contact@devops-portfolio.dev" className="block text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:gajulapallicharan@gmail.com" className="block text-muted-foreground hover:text-primary transition-colors">
                 Email
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/charanreddy12/" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-primary transition-colors">
                 LinkedIn
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/CharanReddy129" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-primary transition-colors">
                 GitHub
               </a>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        {/* <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground flex items-center gap-1">
             Made with <Heart className="h-4 w-4 text-red-500" fill="currentColor" /> by a DevOps enthusiast
           </p>
@@ -64,7 +64,7 @@ const Footer = () => {
               <ArrowUp className="h-4 w-4" />
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

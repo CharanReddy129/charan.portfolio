@@ -33,7 +33,7 @@ const Projects = () => {
       ],
       github: "#",
       demo: "#",
-      status: "In Progress"
+      status: "Completed"
     },
     {
       title: "Container Orchestration Lab",
@@ -125,10 +125,10 @@ const Projects = () => {
                     <Github className="h-4 w-4 mr-2" />
                     Code
                   </Button>
-                  <Button variant="outline" size="sm" className="flex-1">
+                  {/* <Button variant="outline" size="sm" className="flex-1">
                     <Play className="h-4 w-4 mr-2" />
                     Demo
-                  </Button>
+                  </Button> */}
                 </div>
               </CardContent>
             </Card>
@@ -140,9 +140,11 @@ const Projects = () => {
           <p className="text-muted-foreground mb-4">
             More projects available on my GitHub profile
           </p>
-          <Button variant="outline" className="glow-primary">
+          <Button asChild variant="outline" className="glow-primary">
+            <a href="https://github.com/CharanReddy129" target="_blank" rel="noopener noreferrer">
             <ExternalLink className="h-4 w-4 mr-2" />
             View All Projects
+            </a>
           </Button>
         </div>
       </div>

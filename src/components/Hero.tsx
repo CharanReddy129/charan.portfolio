@@ -30,6 +30,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            DevOps Engineer | Cloud Enthusiast<br></br>
             Passionate about automation, cloud infrastructure, and building scalable systems. 
             Ready to streamline deployments and optimize workflows.
           </p>
@@ -58,7 +59,7 @@ const Hero = () => {
           </div>
           
           {/* Floating tech icons */}
-          <div className="flex flex-wrap justify-center gap-4 md:space-x-8 text-muted-foreground">
+          {/* <div className="flex flex-wrap justify-center gap-4 md:space-x-8 text-muted-foreground">
             <div className="animate-float" style={{ animationDelay: '0s' }}>
               <div className="skill-badge px-4 py-2 rounded-full text-sm">Docker</div>
             </div>
@@ -71,7 +72,7 @@ const Hero = () => {
             <div className="animate-float" style={{ animationDelay: '1.5s' }}>
               <div className="skill-badge px-4 py-2 rounded-full text-sm">Jenkins</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       

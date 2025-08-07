@@ -34,7 +34,7 @@ const About = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate DevOps fresher with a strong foundation in cloud technologies, 
+            I'm a passionate DevOps Engineer with a strong foundation in cloud technologies, 
             automation, and infrastructure management. My journey in technology is driven by 
             curiosity and a desire to build efficient, scalable systems that make a difference.
           </p>

@@ -92,7 +92,7 @@ const Skills = () => {
                 <CardTitle className="text-lg text-foreground">{category.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {category.skills.map((skill, idx) => (
                     <Badge 
                       key={idx} 
