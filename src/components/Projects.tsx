@@ -35,6 +35,19 @@ const Projects = () => {
       status: "Completed"
     },
     {
+      title: "Multi-Environment Node.js Deployment using GitOps",
+      description: "Developed a fully automated CI/CD pipeline to build, tag, and deploy a Node.js application across multiple environments (dev, stage, prod) using GitHub Actions, Docker, Helm, and ArgoCD",
+      technologies: ["Docker", "Kubernetes", "Helm", "Git", "GitHub", "ArgoCD", "GitHub Actions",],
+      features: [
+        "Containerized the Node.js app and pushed multiple environment-specific images to DockerHub with dynamic tags.",
+        "Implemented branch-specific Helm values files for managing environment-specific configurations, including image tags.",
+        "Automated image building, tagging, and pushing via GitHub Actions, with logic to update Helm values in the respective branch and commit changes back to Git.",
+        "Automated deployment to dev, stage, and prod environments using ArgoCD with GitOps principles.",
+      ],
+      github: "https://github.com/CharanReddy129/multi-env-app.git",
+      status: "Completed"
+    },
+    {
       title: "End-to-End CI/CD Pipeline for Java Application on AWS EKS",
       description: "Automated the end-to-end CI/CD pipeline to deploy a Java-based application into an AWS EKS cluster using GitHub Actions. The application was built using Maven, performed integrated security checks using SonarQube and Trivy. The application was then containerized with Docker, the image was pushed to AWS ECR, and the deployment to EKS was managed declaratively using ArgoCD.",
       technologies: ["Docker", "Kubernetes", "AWS EKS", "AWS ECR", "Git", "GitHub", "ArgoCD", "GitHub Actions",],
@@ -71,7 +84,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <Card 
               key={index} 
